@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>
-			Activate Aircraft
+			Add Aircrafts Details
 		</title>
 		<style>
 			input {
@@ -17,7 +17,7 @@
 				color: white;
     			border-radius: 4px;
     			padding: 7px 45px;
-    			margin: 0px 67px
+    			margin: 0px 60px
 			}
 		</style>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -26,33 +26,31 @@
 	<body>
 	<img class="logo" src="images/lg.png" >
 		<h1 id="title">
-		United Airlines
+			United Airways
 		</h1>
 		<div>
 			<ul>
 				<li><a href="admin_homepage.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="admin_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-				<li><a href="home_page.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 		</div>
-		<form action="activate_jet_details_form_handler.php" method="post">
-			<h2>ENTER THE AIRCRAFT TO BE ACTIVATED</h2>
+		<form action="add_jet_details_form_handler.php" method="post">
+			<h2>ENTER THE AIRCRAFTS DETAILS</h2>
 			<div>
 			<?php
 				if(isset($_GET['msg']) && $_GET['msg']=='success')
 				{
-					echo "<strong style='color: green'>The Aircraft has been successfully activated.</strong>
-						<br>
-						<br>";
+					echo "<strong style='color: green'>The Aircraft has been successfully added.</strong>
+						<br><br>";
 				}
 				else if(isset($_GET['msg']) && $_GET['msg']=='failed')
 				{
-					echo "<strong style='color:red'>*Invalid Jet ID entered, please enter again.</strong>
-						<br>
-						<br>";
+					echo "<strong style='color:red'>*Jet ID already exists, please enter a new Jet ID.</strong>
+						<br><br>";
 				}
 			?>
-			<table cellpadding="5" style="padding-left: 20px;">
+			<table cellpadding="5">
 				<tr>
 					<td class="fix_table">Enter a valid Jet ID</td>
 				</tr>
@@ -61,7 +59,26 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Activate" name="Activate">
+			<table cellpadding="5">
+				<tr>
+					<td class="fix_table">Enter the Jet Type/Model</td>
+				</tr>
+				<tr>
+					<td class="fix_table"><input type="text" name="jet_type" required></td>
+				</tr>
+			</table>
+			<br>
+			<table cellpadding="5">
+				<tr>
+					<td class="fix_table">Enter the total capacity of the Jet</td>
+				</tr>
+				<tr>
+					<td class="fix_table"><input type="number" name="jet_capacity" required></td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<input type="submit" value="Submit" name="Submit">
 			</div>
 		</form>
 	</body>

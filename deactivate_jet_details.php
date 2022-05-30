@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>
-			Activate Aircraft
+			Deactivate Aircraft
 		</title>
 		<style>
 			input {
@@ -26,7 +26,7 @@
 	<body>
 	<img class="logo" src="images/lg.png" >
 		<h1 id="title">
-		United Airlines
+			United Airlines
 		</h1>
 		<div>
 			<ul>
@@ -35,13 +35,13 @@
 				<li><a href="home_page.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 		</div>
-		<form action="activate_jet_details_form_handler.php" method="post">
-			<h2>ENTER THE AIRCRAFT TO BE ACTIVATED</h2>
+		<form action="deactivate_jet_details_form_handler.php" method="post">
+			<h2>ENTER THE AIRCRAFT TO BE DEACTIVATED</h2>
 			<div>
 			<?php
 				if(isset($_GET['msg']) && $_GET['msg']=='success')
 				{
-					echo "<strong style='color: green'>The Aircraft has been successfully activated.</strong>
+					echo "<strong style='color: green'>The Aircraft has been successfully deactivated.</strong>
 						<br>
 						<br>";
 				}
@@ -61,7 +61,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Activate" name="Activate">
+			<input type="submit" value="Deactivate" name="Deactivate">
 			</div>
 		</form>
 	</body>
